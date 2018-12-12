@@ -1,0 +1,274 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui2="http://java.sun.com/jsf/facelets"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+
+	<ui:define name="title">
+		<h:outputText value="Cadastro de Instrutor" />
+	</ui:define>
+	<ui:define name="principal">
+		<h1>Cadastro de Instrutor</h1>
+		<h:form id="formInstrutor">
+			<p:panelGrid class="ui-noborder" style="text-align: right;">
+				<p:row>
+					<p:column>
+						<p:outputLabel value="CPF:" for="inputCPF" />
+					</p:column>
+					<p:column>
+						<p:inputMask value="#{instrutorMB.instrutor.cpf}" id="inputCPF"
+							mask="999.999.999-99" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Nome:" for="inputNome" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{instrutorMB.instrutor.nome}" id="inputNome"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Area de Atuação:" for="inputArea" />
+					</p:column>
+					<p:column>
+						<p:inputText id="inputArea"
+							value="#{instrutorMB.instrutor.areaAtuacao}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Formação:" for="inputFormacao" />
+					</p:column>
+					<p:column>
+						<p:inputText id="inputFormacao"
+							value="#{instrutorMB.instrutor.formacao}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="RG:" for="inputRG" />
+					</p:column>
+					<p:column>
+						<p:inputMask id="inputRG" mask="99.999.999-9"
+							value="#{instrutorMB.instrutor.rg}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Cidade:" for="inputCidade" />
+					</p:column>
+					<p:column>
+						<p:inputText id="inputCidade"
+							value="#{instrutorMB.instrutor.cidade}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Estado:" />
+					</p:column>
+					<p:column>
+						<p:selectOneMenu id="estado" style="width:125px"
+							value="#{instrutorMB.instrutor.estado}"
+							disabled="#{instrutorMB.flagText}">
+							<f:selectItem itemLabel="Acre" itemValue="Acre" />
+							<f:selectItem itemLabel="Alagoas" itemValue="Alagoas" />
+							<f:selectItem itemLabel="Amapá" itemValue="Amapá" />
+							<f:selectItem itemLabel="Amazonas" itemValue="Amazonas" />
+							<f:selectItem itemLabel="Bahia" itemValue="Bahia" />
+							<f:selectItem itemLabel="Ceará" itemValue="Ceará" />
+							<f:selectItem itemLabel="Distrito Federal"
+								itemValue="Distrito Federal" />
+							<f:selectItem itemLabel="Espírito Santo"
+								itemValue="Espírito Santo" />
+							<f:selectItem itemLabel="Goiás" itemValue="Goiás" />
+							<f:selectItem itemLabel="Maranhão" itemValue="Maranhão" />
+							<f:selectItem itemLabel="Mato Grosso" itemValue="Mato Grosso" />
+							<f:selectItem itemLabel="Mato Grosso do Sul"
+								itemValue="Mato Grosso do Sul" />
+							<f:selectItem itemLabel="Minas Gerais" itemValue="Minas Gerais" />
+							<f:selectItem itemLabel="Pará" itemValue="Pará" />
+							<f:selectItem itemLabel="Paraíba" itemValue="Paraíba" />
+							<f:selectItem itemLabel="Paraná" itemValue="Paraná" />
+							<f:selectItem itemLabel="Pernambuco" itemValue="Pernambuco" />
+							<f:selectItem itemLabel="Piauí" itemValue="Piauí" />
+							<f:selectItem itemLabel="Rio de Janeiro"
+								itemValue="Rio de Janeiro" />
+							<f:selectItem itemLabel="Rio Grande do Norte"
+								itemValue="Rio Grande do Norte" />
+							<f:selectItem itemLabel="Rio Grande do Sul"
+								itemValue="Rio Grande do Sul" />
+							<f:selectItem itemLabel="Rondônia" itemValue="Rondônia" />
+							<f:selectItem itemLabel="Roraima" itemValue="Roraima" />
+							<f:selectItem itemLabel="Santa Catarina"
+								itemValue="Santa Catarina" />
+							<f:selectItem itemLabel="São Paulo" itemValue="São Paulo" />
+							<f:selectItem itemLabel="Sergipe" itemValue="Sergipe" />
+							<f:selectItem itemLabel="Tocantins" itemValue="Tocantins" />
+						</p:selectOneMenu>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Endereço:" for="inputEndereco" />
+					</p:column>
+					<p:column>
+						<p:inputText id="inputEndereco"
+							value="#{instrutorMB.instrutor.endereco}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Telefone:" for="inputTelefone" />
+					</p:column>
+					<p:column>
+						<p:inputMask id="inputTelefone" mask="(99) 9999-9999"
+							value="#{instrutorMB.instrutor.telefone}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Data de Nascimento:"
+							for="inputDataNascimento" />
+					</p:column>
+					<p:column>
+						<p:inputMask id="inputDataNascimento" mask="99/99/9999"
+							value="#{instrutorMB.instrutor.dataNasc}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Número:" for="inputNumero" />
+					</p:column>
+					<p:column>
+						<p:inputText id="inputNumero"
+							value="#{instrutorMB.instrutor.numero}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+
+					<p:column>
+						<p:outputLabel value="Celular:" for="inputCelular" />
+					</p:column>
+					<p:column>
+						<p:inputMask id="inputCelular" mask="(99) 99999-9999"
+							value="#{instrutorMB.instrutor.celular}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Sexo:" />
+					</p:column>
+					<p:column>
+						<p:selectOneRadio value="#{instrutorMB.instrutor.estadoCivil}"
+							style="width:125px" disabled="#{instrutorMB.flagText}">
+							<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+							<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+						</p:selectOneRadio>
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Bairro:" for="inputBairro" />
+					</p:column>
+					<p:column>
+						<p:inputText id="inputBairro"
+							value="#{instrutorMB.instrutor.bairro}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Email:" for="inputEmail" />
+					</p:column>
+					<p:column>
+						<p:inputText id="inputEmail"
+							value="#{instrutorMB.instrutor.email}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Estado Civil:" />
+					</p:column>
+					<p:column>
+						<p:selectOneMenu value="#{instrutorMB.instrutor.estadoCivil}"
+							style="width:125px" disabled="#{instrutorMB.flagText}">
+							<f:selectItem itemLabel="Solteiro" itemValue="Solteiro" />
+							<f:selectItem itemLabel="Casado" itemValue="Casado" />
+							<f:selectItem itemLabel="Divorciado" itemValue="Divorciado" />
+						</p:selectOneMenu>
+					</p:column>
+					<p:column>
+						<p:outputLabel value="CEP:" for="inputCEP" />
+					</p:column>
+					<p:column>
+						<p:inputMask id="inputCEP" mask="99999-999"
+							value="#{instrutorMB.instrutor.cep}"
+							disabled="#{instrutorMB.flagText}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid class="ui-noborder"
+				style="margin-top:60px; margin-left:100px;">
+				<p:row>
+					<p:column>
+						<p:commandButton value="Consultar"
+							action="#{instrutorMB.consultar}" update=":formInstrutor"
+							disabled="#{instrutorMB.flagConsultar}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Inserir" action="#{instrutorMB.salvar}"
+							update=":formInstrutor" disabled="#{instrutorMB.flagInserir}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Alterar" action="#{instrutorMB.alterar}"
+							update=":formInstrutor" disabled="#{instrutorMB.flagAlterar}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Excluir" action="#{instrutorMB.deletar}"
+							update=":formInstrutor" disabled="#{instrutorMB.flagDeletar}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Cancelar" action="#{instrutorMB.cancelar}"
+							update=":formInstrutor" disabled="#{instrutorMB.flagCancelar}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:dataTable value="#{instrutorMB.instrutors}" var="aux">
+				<p:column headerText="CPF">
+					<p:outputLabel value="#{aux.cpf}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Nome">
+					<p:outputLabel value="#{aux.nome}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Endereço">
+					<p:outputLabel value="#{aux.endereco}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Bairro">
+					<p:outputLabel value="#{aux.bairro}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Número">
+					<p:outputLabel value="#{aux.numero}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="CEP">
+					<p:outputLabel value="#{aux.cep}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Cidade">
+					<p:outputLabel value="#{aux.cidade}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Estado">
+					<p:outputLabel value="#{aux.estado}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="areaAtuacao">
+					<p:outputLabel value="#{aux.areaAtuacao}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="formacao">
+					<p:outputLabel value="#{aux.formacao}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Email">
+					<p:outputLabel value="#{aux.email}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Data Nascimento">
+					<p:outputLabel value="#{aux.dataNasc}"></p:outputLabel>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

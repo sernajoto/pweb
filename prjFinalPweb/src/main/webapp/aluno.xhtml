@@ -1,0 +1,242 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui2="http://java.sun.com/jsf/facelets"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+
+	<ui:define name="title">
+		<h:outputText value="Cadastro de Aluno" />
+	</ui:define>
+	<ui:define name="principal">
+		<h1>Cadastro de Aluno</h1>
+		<h:form id="formAluno">
+			<p:panelGrid class="ui-noborder" style="text-align: right;">
+				<p:row>
+					<p:column>
+						<p:outputLabel value="CPF:" for="inputCPF" />
+					</p:column>
+					<p:column>
+						<p:inputMask id="inputCPF" mask="999.999.999-99"
+							value="#{alunoMB.aluno.cpf}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Nome:" for="inputNome" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{alunoMB.aluno.nome}" id="inputNome"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Data de Nascimento:"
+							for="inputDataNascimento" />
+					</p:column>
+					<p:column>
+						<p:inputMask value="#{alunoMB.aluno.dataNasc}"
+							id="inputDataNascimento" mask="99/99/9999"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="RG:" for="inputRG" />
+					</p:column>
+					<p:column>
+						<p:inputMask value="#{alunoMB.aluno.rg}" id="inputRG"
+							mask="99.999.999-9" disabled="#{alunoMB.flagText}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Sexo:" />
+					</p:column>
+					<p:column>
+						<p:selectOneRadio value="#{alunoMB.aluno.sexo}"
+							style="width:125px" disabled="#{alunoMB.flagText}">
+							<f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+							<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+						</p:selectOneRadio>
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Estado Civil:" />
+					</p:column>
+					<p:column>
+						<p:selectOneMenu value="#{alunoMB.aluno.estadoCivil}"
+							style="width:125px" disabled="#{alunoMB.flagText}">
+							<f:selectItem itemLabel="Solteiro" itemValue="Solteiro" />
+							<f:selectItem itemLabel="Casado" itemValue="Casado" />
+							<f:selectItem itemLabel="Divorciado" itemValue="Divorciado" />
+						</p:selectOneMenu>
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Escolaridade" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{alunoMB.aluno.escolaridade}"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Endereço:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{alunoMB.aluno.endereco}"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Número:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{alunoMB.aluno.numero}"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Bairro:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{alunoMB.aluno.bairro}"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="CEP:" for="inputCEP" />
+					</p:column>
+					<p:column>
+						<p:inputMask value="#{alunoMB.aluno.cep}" id="inputCEP"
+							mask="99999-999" disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Cidade:" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{alunoMB.aluno.cidade}"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Estado:" />
+					</p:column>
+					<p:column>
+						<p:selectOneMenu id="estado" style="width:125px"
+							value="#{alunoMB.aluno.estado}" disabled="#{alunoMB.flagText}">
+							<f:selectItem itemLabel="Acre" itemValue="Acre" />
+							<f:selectItem itemLabel="Alagoas" itemValue="Alagoas" />
+							<f:selectItem itemLabel="Amapá" itemValue="Amapá" />
+							<f:selectItem itemLabel="Amazonas" itemValue="Amazonas" />
+							<f:selectItem itemLabel="Bahia" itemValue="Bahia" />
+							<f:selectItem itemLabel="Ceará" itemValue="Ceará" />
+							<f:selectItem itemLabel="Distrito Federal"
+								itemValue="Distrito Federal" />
+							<f:selectItem itemLabel="Espírito Santo"
+								itemValue="Espírito Santo" />
+							<f:selectItem itemLabel="Goiás" itemValue="Goiás" />
+							<f:selectItem itemLabel="Maranhão" itemValue="Maranhão" />
+							<f:selectItem itemLabel="Mato Grosso" itemValue="Mato Grosso" />
+							<f:selectItem itemLabel="Mato Grosso do Sul"
+								itemValue="Mato Grosso do Sul" />
+							<f:selectItem itemLabel="Minas Gerais" itemValue="Minas Gerais" />
+							<f:selectItem itemLabel="Pará" itemValue="Pará" />
+							<f:selectItem itemLabel="Paraíba" itemValue="Paraíba" />
+							<f:selectItem itemLabel="Paraná" itemValue="Paraná" />
+							<f:selectItem itemLabel="Pernambuco" itemValue="Pernambuco" />
+							<f:selectItem itemLabel="Piauí" itemValue="Piauí" />
+							<f:selectItem itemLabel="Rio de Janeiro"
+								itemValue="Rio de Janeiro" />
+							<f:selectItem itemLabel="Rio Grande do Norte"
+								itemValue="Rio Grande do Norte" />
+							<f:selectItem itemLabel="Rio Grande do Sul"
+								itemValue="Rio Grande do Sul" />
+							<f:selectItem itemLabel="Rondônia" itemValue="Rondônia" />
+							<f:selectItem itemLabel="Roraima" itemValue="Roraima" />
+							<f:selectItem itemLabel="Santa Catarina"
+								itemValue="Santa Catarina" />
+							<f:selectItem itemLabel="São Paulo" itemValue="São Paulo" />
+							<f:selectItem itemLabel="Sergipe" itemValue="Sergipe" />
+							<f:selectItem itemLabel="Tocantins" itemValue="Tocantins" />
+						</p:selectOneMenu>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:outputLabel value="Telefone:" for="inputTelefone" />
+					</p:column>
+					<p:column>
+						<p:inputMask value="#{alunoMB.aluno.telefone}" id="inputTelefone"
+							mask="(99) 9999-9999" disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Celular:" for="inputCelular" />
+					</p:column>
+					<p:column>
+						<p:inputMask value="#{alunoMB.aluno.celular}" id="inputCelular"
+							mask="(99) 99999-9999" disabled="#{alunoMB.flagText}" />
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Email:" for="inputEmail" />
+					</p:column>
+					<p:column>
+						<p:inputText value="#{alunoMB.aluno.email}" id="inputEmail"
+							disabled="#{alunoMB.flagText}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid class="ui-noborder"
+				style="margin-top:60px; margin-left:100px;">
+				<p:row>
+					<p:column>
+						<p:commandButton value="Consultar" action="#{alunoMB.consultar}"
+							update=":formAluno" disabled="#{alunoMB.flagConsultar}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Inserir" action="#{alunoMB.salvar}"
+							update=":formAluno" disabled="#{alunoMB.flagInserir}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Alterar" action="#{alunoMB.alterar}"
+							update=":formAluno" disabled="#{alunoMB.flagAlterar}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Excluir" action="#{alunoMB.deletar}"
+							update=":formAluno" disabled="#{alunoMB.flagDeletar}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Cancelar" action="#{alunoMB.cancelar}"
+							update=":formAluno" disabled="#{alunoMB.flagCancelar}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:dataTable value="#{alunoMB.alunos}" var="aux">
+				<p:column headerText="CPF">
+					<p:outputLabel value="#{aux.cpf}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Nome">
+					<p:outputLabel value="#{aux.nome}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Endereço">
+					<p:outputLabel value="#{aux.endereco}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Bairro">
+					<p:outputLabel value="#{aux.bairro}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Número">
+					<p:outputLabel value="#{aux.numero}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Cidade">
+					<p:outputLabel value="#{aux.cidade}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Estado">
+					<p:outputLabel value="#{aux.estado}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Estado Civil">
+					<p:outputLabel value="#{aux.estadoCivil}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Data Nascimento">
+					<p:outputLabel value="#{aux.dataNasc}"></p:outputLabel>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
